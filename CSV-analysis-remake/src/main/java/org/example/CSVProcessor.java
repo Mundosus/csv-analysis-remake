@@ -8,9 +8,16 @@ public class CSVProcessor {
         List<String> words = new ArrayList<>();
 
         for (String line : lines) {
+            // Handle empty lines
+            if (line == null || line.trim().isEmpty()) {
+                continue;
+            }
+
             String[] parts = line.split(",");
             for (String word : parts) {
-                if (!word.isBlank()) {
+                // Clean up the word - remove quotes and trim whitespace
+                word = word.trim().replaceAll("^\"|\"$", "");
+                if (!word.isEmpty()) {
                     words.add(word.toLowerCase());
                 }
             }

@@ -4,8 +4,6 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.*;
 
-// Note: Remove JUnit imports if JUnit is not available
-// For basic testing without JUnit framework:
 
 public class MainTest {
 
